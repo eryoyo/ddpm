@@ -1,9 +1,9 @@
-from DiffusionFreeGuidence.TrainCondition import train, eval
+from DiffusionFreeGuidence.TrainCondition import eval, train
 
 
 def main(model_config=None):
     modelConfig = {
-        "state": "train", # or eval
+        "state": "train",  # or eval
         "epoch": 70,
         "batch_size": 80,
         "T": 500,
@@ -16,7 +16,7 @@ def main(model_config=None):
         "beta_1": 1e-4,
         "beta_T": 0.028,
         "img_size": 32,
-        "grad_clip": 1.,
+        "grad_clip": 1.0,
         "device": "cuda:0",
         "w": 1.8,
         "save_dir": "./CheckpointsCondition/",
@@ -25,7 +25,7 @@ def main(model_config=None):
         "sampled_dir": "./SampledImgs/",
         "sampledNoisyImgName": "NoisyGuidenceImgs.png",
         "sampledImgName": "SampledGuidenceImgs.png",
-        "nrow": 8
+        "nrow": 8,
     }
     if model_config is not None:
         modelConfig = model_config
